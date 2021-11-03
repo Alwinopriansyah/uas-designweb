@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/kkBeasiswa.css">
+    <title>Politeknik Kampar Kelompok 1</title>
+    <link rel="icon" type="image/png" href="assets/img home/kkIcon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+  </head>
+ 
+
+<body background="assets/img home/BERANDA.svg">
+
+<!--PRE LOADER-->
+<div class="loader">
+  <img  src="assets/img home/animation_500_koa457kb.gif"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" alt="">
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="navbar-logo">
+    <img src="assets/img home/logokampar.png" alt="navbar-logo">
+  </div>
+  
+  <div class="navbar-list">
+        <ul>
+          <li>
+            <a class="navbarbtn" href="kkKontak.html">Kontak</a>
+          </li>
+          <li>
+            <a class="navbarbtn"href="kkteknikinformatika.html">
+              Teknik Informatika
+            </a>
+          </li>
+          <li>
+            <a class="navbarbtn"href="kkBeasiswa.html">
+                   Beasiswa
+            </a>
+          </li>
+          <li>
+            <a class="navbarbtn"href="kkLihat.html">
+                 Lihat Kampus
+            </a>
+          </li>
+          <li>
+            <a class="navbarbtn" href="index.html">
+                  Beranda
+            </a>
+          </li>
+        </ul>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="beasiswa">
+  <h1>BEASISWA</h1>
+  <p>Informasi Beasiswa yang Sedang atau Akan Buka</p>
+
+  <!--LIST BEASISWA-->
+    <table class="tableDjarum" cellpadding="10px">
+      <tr>
+        <td><img src="assets/img beasiswa/kipkuliah.jpg" alt="Gambar Kip Kuliah"></td>
+        <td rowspan="2">
+          <h3>Kip Kuliah</h3>
+          <a href="https://kip-kuliah.kemdikbud.go.id/" target="blank">
+            <button class="btnmain">Daftar Sekarang</button>
+        </a>
+        </td>
+      </tr>
+    </table>
+
+    <br>
+
+    <table class="tableBRI" cellpadding="10px">
+      <tr>
+        <td><img src="assets/img beasiswa/bpdpks.jpg" alt="Gambar beasiswa bpdpks"></td>
+        <td rowspan="2">
+          <h3>Beasiswa Badan Pengelolah Dana Perkebunan Kelapa Sawit</h3>
+          <a href="https://disbunak.paserkab.go.id/detailpost/pendaftaran-online-beasiswa-sdm-sawit-bpdpks-2021-telah-dibuka" target="blank">
+          <button class="btnmain">Daftar Sekarang</button>
+          </a>
+        </td>
+      </tr>
+    </table>
+
+
+<!--FOOTER-->
+<div class="footer">
+  <h3>Copyright ©2020 Politeknik Kampar Kelompok 1. All Rights Reserved  </h3>
+  <p>Tanggal,Jam saat ini: <span id="tanggalwaktu"></span></p>
+</div>
+
+
+<script>
+  //JAM
+  function fungsiJam()
+  {
+      var str = "";
+  
+      var days = new Array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu");
+      var months = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+  
+      var now = new Date();
+  
+      str += days[now.getDay()] + ", " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear() + " " + now.getHours() +":" + ('0' + now.getMinutes()).slice(-2) + ":" + now.getSeconds();
+      document.getElementById("tanggalwaktu").innerHTML = str;
+  }
+  
+  setInterval(fungsiJam, 1000);
+  
+  //PRELOADER
+  var loader = document.querySelector(".loader")
+  
+  window.addEventListener("load", vanish);
+  
+  function vanish() {
+    loader.classList.add("disappear");
+  }
+  
+  </script>
+
+</body>
+
+</html>

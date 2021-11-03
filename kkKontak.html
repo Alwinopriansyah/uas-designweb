@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/kkKontak.css">
+    <title>Politeknik Kampar Kelompok 1</title>
+    <link rel="icon" type="image/png" href="assets/img home/kkIcon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+  </head>
+ 
+<body>
+
+<!--PRE LOADER-->
+<div class="loader">
+  <img  src="assets/img home/animation_500_koa457kb.gif"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" alt="">
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="navbar-logo">
+    <img src="assets/img home/logokampar.png" alt="navbar-logo">
+  </div>
+  
+  <div class="navbar-list">
+        <ul>
+          <li>
+            <a class="navbarbtn" href="kkKontak.html">Kontak</a>
+          </li>
+          <li>
+            <a class="navbarbtn"href="kkteknikinformatika.html">
+              Teknik Informatika
+            </a>
+          </li>
+          <li>
+            <a class="navbarbtn"href="kkBeasiswa.html">
+                   Beasiswa
+            </a>
+          </li>
+          <li>
+            <a class="navbarbtn"href="kkLihat.html">
+                 Lihat Kampus
+            </a>
+          </li>
+          <li>
+            <a class="navbarbtn" href="index.html">
+                  Beranda
+            </a>
+          </li>
+        </ul>
+  </div>
+</div>
+
+<!--MAIN-->
+<div class="main">
+  <!--PICT-->
+  <img class="jumbopict" src="assets/img contact/Contact us.png" alt="">
+  
+  <!--MAIN TEXT-->
+  <div class="main-text">
+    <h1>Belum mendapatkan apa yang kamu cari?</h1>
+    <h2>Hubungi kami dengan mengisi form email di bawah ini. Kami akan segera menanggapi email kamu maksimal 2 hari kerja. Jangan lupa cek bagian spam untuk memastikan email sudah ditanggapi atau belum! </h2>
+  </div>
+
+  <!--FORM-->
+  <form name = "formku" action="mailto:cs@kampuskita.ac.id" method="post" enctype="text/plain">
+    <p class="nama">
+      Nama:
+    </p>
+      <input class="kolom-nama" type="text" name="nama">
+    <p class="Email">
+      Email:
+    </p>
+      <input class="kolom-Email" type="text" name="Email">
+    <p class="subjek">
+      Subjek:
+    </p>
+      <input class="kolom-subjek" type="" name="Subjek">
+    <p class="pesan">
+      Pesan:
+    </p>
+      <textarea class="kolom-pesan" name ="Pesan"></textarea>
+    <button class="sendbtn" onClick = "cekInput(this.form)"> 
+      Kirim pesan
+    </button>
+  </form>
+  
+  <p class="alamat">Jl. Tengku Muhammad Km.2 Bangkinang, Kabupaten Kampar Provinsi Riau </p>
+
+
+</div>
+
+<!--FOOTER-->
+<div class="footer">
+  <h3>Copyright ©2020 Politeknik Kampar Kelompok 1. All Rights Reserved  </h3>
+  <p>Tanggal,Jam saat ini: <span id="tanggalwaktu"></span></p>
+</div>
+
+<!--KONTAK-->
+<button class="button" id="icon-contact">
+  <img src="assets/img contact/CS.png" alt="">
+</button>
+
+<div class="modal" id="contact">
+      <div class="modal-header">
+        <div class="tittle">Hubungi Kami</div>
+        <button class="close-button" id="close">&times;</button>
+      </div>
+      <div class="modal-body1">
+        <div><img src="assets/img contact/Telephone.png" class="modal-icon">
+          <p>0852-1129-0621</p>
+        </div>
+        <hr>
+        <div><img src="assets/img contact/Instagram.png" class="modal-icon">
+          <a href="https://www.instagram.com/kampuskitaa.id/" class="modal-text" target="_blank">
+            <p>@politeknik_Kampar</p>
+          </a>
+        </div>
+        <hr>
+        <div><img src="assets/img contact/Twitter.png" class="modal-icon">
+          <a href="https://www.instagram.com/kampuskitaa.id/" class="modal-text" target="_blank">
+            <p>@politeknik_Kampar</p>
+          </a>
+        </div>
+        <hr>
+        <div><img src="assets/img contact/Email.png" class="modal-icon">
+          <p>@poltek-kampar.ac.id</p>
+        </div>
+      </div>
+</div>
+
+<script>
+//JAM
+function fungsiJam()
+{
+    var str = "";
+
+    var days = new Array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu");
+    var months = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+
+    var now = new Date();
+
+    str += days[now.getDay()] + ", " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear() + " " + ('0' + now.getHours()).slice(-2) +":" + ('0' + now.getMinutes()).slice(-2) + ":" + ('0' + now.getSeconds()).slice(-2);
+    document.getElementById("tanggalwaktu").innerHTML = str;
+  }
+
+setInterval(fungsiJam, 1000);
+
+//PRELOADER
+var loader = document.querySelector(".loader")
+
+window.addEventListener("load", vanish);
+
+function vanish() {
+  loader.classList.add("disappear");
+}
+
+
+//FUNGSI ALERT
+function cekInput(form) {
+      if (form.elements[0].value == "") {
+         alert("Ketikkan nama kamu!");
+         return(false);
+      }
+      else if (form.elements[1].value == "") {
+         alert("Ketikkan email kamu!");
+         return(false);
+      }
+      else if (form.elements[2].value == "") {
+         alert("Harap isi subjek pesan!");
+         return(false);
+      }
+      else if (form.elements[3].value == "") {
+         alert("Harap isi pesan yang ingin kamu sampaikan!");
+         return(false);
+      }
+
+      alert("Terima kasih, " +
+            form.elements[0].value + "! Admin kami akan menanggapi email kamu dalam maksimal 2 hari kerja (:");
+      return(true);
+   }
+
+//BUTTON KONTAK
+const openClickButton = document.getElementById("icon-contact")
+const closeClickButton = document.getElementById("close")
+
+function openModal(){
+    const modal = document.getElementById("contact")
+    modal.classList.add("active")   
+}
+
+function closeModal(){
+    const modal = document.getElementById("contact")
+    modal.classList.remove("active")
+}
+
+openClickButton.addEventListener("click",openModal)
+closeClickButton.addEventListener("click",closeModal)
+
+</script>
+
+</body>
+</html>
